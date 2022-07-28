@@ -32,7 +32,7 @@ class DictionaryScreen extends StatelessWidget {
                       ),
                 itemCount: word.length,
               )
-            : noWords(text: 'No words Yet, PLease Add Some Words');
+            : noWords(text: 'No words Yet, PLease Add Some Words',num: 1);
       },
     );
   }

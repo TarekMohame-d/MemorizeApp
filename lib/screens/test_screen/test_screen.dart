@@ -41,7 +41,7 @@ class TestScreen extends StatelessWidget {
                   ],
                 ),
               )
-            : noWords(text: 'No words Yet, PLease Add Some Words');
+            : noWords(text: 'No words Yet, PLease Add Some Words',num: 1);
       },
     );
   }

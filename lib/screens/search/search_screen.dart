@@ -19,7 +19,8 @@ class SearchScreen extends StatelessWidget {
           body: Column(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.only(end: 20.0,start: 20.0,top: 5),
+                padding: const EdgeInsetsDirectional.only(
+                    end: 20.0, start: 20.0, top: 5),
                 child: defaultTextFormField(
                   autoFocus: true,
                   controller: searchController,
@@ -39,7 +40,7 @@ class SearchScreen extends StatelessWidget {
               ),
               searchWords.isNotEmpty
                   ? Expanded(
-                    child: ListView.separated(
+                      child: ListView.separated(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
@@ -60,29 +61,25 @@ class SearchScreen extends StatelessWidget {
                                   ),
                         itemCount: searchWords.length,
                       ),
-                  )
+                    )
                   : word.isNotEmpty
-            ? Expanded(
-              child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => dictionaryItem(
-                    model: word[index],
-                    context: context,
-                    notDismissible: true,
-                  ),
-                  separatorBuilder: (context, index) => word.length <= 1
-                      ? const SizedBox()
-                      : const Divider(
-                          color: Colors.grey,
-                          indent: 20.0,
-                          endIndent: 20.0,
-                          height: 1.0,
-                          thickness: 3,
+                      ? searchController.text.isEmpty
+                          ? const Padding(
+                              padding: EdgeInsets.only(top: 100.0),
+                              child: Center(
+                                  child: CircularProgressIndicator()),
+                            )
+                          : Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: noWords(
+                                  text: 'There is no word for this', num: 3),
+                            )
+                      : Padding(
+                          padding: const EdgeInsets.only(top: 30),
+                          child: noWords(
+                              text: 'No words Yet, PLease Add Some Words',
+                              num: 1),
                         ),
-                  itemCount: word.length,
-                ),
-            )
-            : noWords(text: 'No words Yet, PLease Add Some Words'),
             ],
           ),
         );

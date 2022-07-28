@@ -40,7 +40,7 @@ class FavoriteScreen extends StatelessWidget {
                       ),
                 itemCount: word.length,
               )
-            : noWords(text: 'There are no favorite words',isFav: true);
+            : noWords(text: 'There are no favorite words',num: 2);
       },
     );
   }

@@ -1,9 +1,9 @@
 
-import '../../shared/cubit/app_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../components/components.dart';
+import '../../shared/cubit/app_cubit.dart';
 
 class RandomWordScreen extends StatelessWidget {
   const RandomWordScreen({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class RandomWordScreen extends StatelessWidget {
                   thickness: 3,
                 ),
           itemCount: word.length,
-        ): noWords(text: 'No words Yet, PLease Add Some Words');
+        ): noWords(text: 'No words Yet, PLease Add Some Words',num: 1);
       },
     );
   }

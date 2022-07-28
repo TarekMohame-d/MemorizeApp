@@ -71,7 +71,7 @@ class AppCubit extends Cubit<AppState> {
   void runFilter(String enteredKeyword) {
     searchResults = [];
     if (enteredKeyword.isEmpty) {
-      searchResults = words;
+      searchResults = [];
     } else {
       searchResults = words
           .where((element) => element["englishWord"]

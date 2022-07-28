@@ -242,15 +242,19 @@ Widget defaultTextFormField({
       controller: controller,
     );
 
-Widget noWords({required String text, bool isFav = false}) {
+Widget noWords({required String text, required int num}) {
   return Center(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          isFav == false
+          num == 1
               ? MdiIcons.alphabeticalVariantOff
-              : MdiIcons.heartBroken,
+              : num == 2
+                  ? MdiIcons.heartBroken
+                  : num == 3
+                      ? MdiIcons.alertCircle
+                      : MdiIcons.alphabeticalVariantOff,
           size: 100.0,
           color: Colors.grey,
         ),
