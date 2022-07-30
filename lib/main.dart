@@ -1,10 +1,10 @@
-import 'shared/cubit/app_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'layout/home_layout.dart';
+import 'screens/splash_screen/splash_screen.dart';
 import 'shared/bloc_observer/bloc_observer.dart';
+import 'shared/cubit/app_cubit.dart';
 
 void main() {
   BlocOverrides.runZoned(
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       create: (context) => AppCubit()..createDatabase(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeLayout(),
+        home: const SplashScreen(),
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
           scaffoldBackgroundColor: Colors.white,

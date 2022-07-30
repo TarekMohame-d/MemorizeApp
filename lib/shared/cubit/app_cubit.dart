@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import '../../screens/favorite_screen/favorite_screen.dart';
-import '../../screens/test_screen/test_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../screens/dictionary_screen/dictionary_screen.dart';
+import '../../screens/favorite_screen/favorite_screen.dart';
 import '../../screens/random_word_screen/random_word_screen.dart';
+import '../../screens/test_screen/test_screen.dart';
 
 part 'app_state.dart';
 
