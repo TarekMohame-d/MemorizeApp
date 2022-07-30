@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontSize: 24.0,
                       fontFamily: 'Product Sans',
                       fontWeight: FontWeight.w700,
-                      color: Color(0xffFF9D22),
+                      color: Color(0xff4893FF),
                     ),
                   ),
                   Text(
@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontSize: 24.0,
                       fontFamily: 'Product Sans',
                       fontWeight: FontWeight.w700,
-                      color: Color(0xff4893FF),
+                      color: Color(0xffFF9D22),
                     ),
                   ),
                 ],
@@ -98,6 +98,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 animatedTexts: [
                   ColorizeAnimatedText(
                     'Tarek dev.',
+                    speed: const Duration(milliseconds: 200),
                     textStyle: const TextStyle(
                       fontSize: 24.0,
                       fontFamily: 'Product Sans',
