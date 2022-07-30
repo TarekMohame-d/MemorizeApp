@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       },
     );
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 1), () {
       setState(() {
         _text1 = 'Memo';
         _text2 = 'rize';
