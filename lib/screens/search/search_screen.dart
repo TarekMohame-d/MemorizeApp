@@ -1,8 +1,8 @@
-import '../../shared/cubit/app_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../components/components.dart';
+import '../../shared/cubit/app_cubit.dart';
 
 class SearchScreen extends StatelessWidget {
   var searchController = TextEditingController();

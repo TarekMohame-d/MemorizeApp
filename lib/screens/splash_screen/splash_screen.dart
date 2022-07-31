@@ -13,11 +13,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool visible = false;
   @override
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 3),
+      const Duration(seconds: 4),
       () {
         Navigator.push(
           context,
@@ -27,16 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       },
     );
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(seconds: 2), () {
       setState(() {
-        _text1 = 'Memo';
-        _text2 = 'rize';
+        visible = true;
       });
     });
   }
 
-  String _text1 = '';
-  String _text2 = '';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -60,28 +58,32 @@ class _SplashScreenState extends State<SplashScreen> {
               const SizedBox(
                 height: 12.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    _text1,
-                    style: const TextStyle(
-                      fontSize: 24.0,
-                      fontFamily: 'Product Sans',
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xff4893FF),
+              AnimatedOpacity(
+                opacity: visible ? 1.0 : 0.0,
+                duration: const Duration(milliseconds: 1500),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'Memo',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontFamily: 'Product Sans',
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff4893FF),
+                      ),
                     ),
-                  ),
-                  Text(
-                    _text2,
-                    style: const TextStyle(
-                      fontSize: 24.0,
-                      fontFamily: 'Product Sans',
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xffFF9D22),
+                    Text(
+                      'rize',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontFamily: 'Product Sans',
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xffFF9D22),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const Spacer(
                 flex: 3,
