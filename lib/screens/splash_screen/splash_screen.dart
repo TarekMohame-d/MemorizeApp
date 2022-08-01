@@ -18,9 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 4),
+      const Duration(seconds: 3),
       () {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => HomeLayout(),
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       },
     );
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 1, milliseconds: 500), () {
       setState(() {
         visible = true;
       });
